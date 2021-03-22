@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/upLoad" method="post" enctype="multipart/form-data">
+    <input type="file" name="file">
+    <button type="submit">上传</button>
+    <input type="text" style="width: 260px"  th:value="${msg!=null?msg:''}">
+</form>
+<br><br>
+
+<form action="/downLoad" method="get" >
+    <button type="submit" style="margin-left: 257px">下载</button>
+    <input type="text" style="width: 260px"  name="uuid">
+</form>
+
+<br><br>
+
+<form action="/getMetadata" method="get">
+    <button type="submit" style="margin-left: 257px">元数据</button>
+    <input type="text" style="width: 250px"  name="uuid">
+</form>
+</body>
+</html>

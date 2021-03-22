@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qiyuesuo.thb.server.mapper.FileMapper">
+
+    <insert id="saveFile" parameterType="fileEntity">
+        insert into download_file(size,type,originalname,createtime,address,uuid) values (#{size},#{type},#{originalname},#{createtime},#{address},#{uuid})
+    </insert>
+    <select id="queryFileList" resultType="fileEntity" >
+        select * from download_file
+    </select>
+    <select id="getFileByUUID" resultType="com.qiyuesuo.thb.server.entity.FileEntity">
+        select * from download_file where uuid=#{uuid}
+    </select>
+</mapper>

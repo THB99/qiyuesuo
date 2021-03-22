@@ -1,0 +1,19 @@
+spring:
+  thymeleaf:
+    prefix: classpath:/templates/
+    cache: false
+  servlet:
+    multipart:
+      max-file-size: 500MB
+      max-request-size: 100MB
+  #DB Configuration:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.56.11:3306/qiyuesuo?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+
+mybatis:
+  type-aliases-package: com.qiyuesuo.thb.server.entity
+  mapper-locations: classpath:mapper/*Mapper.xml
+
