@@ -16,20 +16,5 @@ import java.util.List;
 @SpringBootTest
 public class ServerApplicationTests {
 
-	@Autowired
-	FileMapper fileMapper;
-
-	@Test
-	public void test1() {
-		FileEntity fileEntity = new FileEntity();
-		fileEntity.setAddress("1212");
-		fileEntity.setCreatetime(new Date());
-		fileEntity.setOriginalname("13434.txt");
-		fileEntity.setSize(32432L);
-		fileEntity.setType("eqwewq");
-		fileMapper.saveFile(fileEntity);
-		List<FileEntity> fileEntities = fileMapper.queryFileList();
-		System.out.println(fileEntities);
-	}
 
 }
