@@ -33,6 +33,7 @@ public class FileUploadServiceImpl implements FileUploadService {
     @Override
     public String upLoad(MultipartFile file) throws IOException {
         if (file.isEmpty()){
+            log.error("上传文件为空");
             throw new FileEmptyException();
         }
         //获取上传文件名称
@@ -43,11 +44,12 @@ public class FileUploadServiceImpl implements FileUploadService {
 
         int length = split.length;
         if (length==1){
-            log.error("文件名格式不正确",originalname);
+            log.error("文件名格式不正确"+originalname);
             throw new FileNameException(originalname);
         }
         //文件后缀名
         String houzhui = split[length - 1];
+        log.info("文件类型"+houzhui);
         String pwd = System.getProperty("user.dir");
         String uuid= UUID.randomUUID().toString();
 
